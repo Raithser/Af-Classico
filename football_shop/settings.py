@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-0e==vv+8u$#_%@k=t6y6wnca#3%=sn8#3e+$3x!dahx^gsh*ne
 PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "m-adella-tugasindividu.pbp.cs.ui.ac.id"]
 
 
 # Application definition
