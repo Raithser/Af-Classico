@@ -79,7 +79,10 @@ Kenapa Django cocok untuk menjadi framework pertama:
 Feedback untuk asisten dosen:
 Sudah sangat membantu
 
-===============================================================================================================================
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
 README TUGAS 2
 
 Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
