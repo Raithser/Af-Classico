@@ -115,10 +115,10 @@ csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang
 -------------------------------------------------------------------------------------------------------------------------------
 
 
-<img width="1021" height="926" a<img width="1085" height="945" alt="Screenshot 2025-09-17 024802" src="https://github.com/user-attachments/assets/d50fb195-3713-4d39-99f7-a96a4e6d1bb3" />
-lt="Screenshot 2025-09-17 024755" src="https://github.com/user-attachments/assets/c63a2542-ffc8-46b9-983c-1a10fc88dbca" />
+<img width="1085" height="945" alt="Screenshot 2025-09-17 024802" src="https://github.com/user-attachments/assets/d50fb195-3713-4d39-99f7-a96a4e6d1bb3" />
 <img width="1120" height="908" alt="Screenshot 2025-09-17 024809" src="https://github.com/user-attachments/assets/b6f50a78-ee42-4115-9526-7b5ddf649cf3" />
 <img width="1064" height="910" alt="Screenshot 2025-09-17 024814" src="https://github.com/user-attachments/assets/efbeecbd-1fd0-48bc-a443-90af63503384" />
+<img width="1021" height="926" alt="Screenshot 2025-09-17 024755" src="https://github.com/user-attachments/assets/d8187f40-b085-4f8e-9ac4-43bd15af12b2" />
 
 -------------------------------------------------------------------------------------------------------------------------------
 Asdos sudah membantu dan keren
