@@ -126,6 +126,91 @@ csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang
 -------------------------------------------------------------------------------------------------------------------------------
 Asdos sudah membantu dan keren
 -------------------------------------------------------------------------------------------------------------------------------
+TUGAS 3
+
+Apa itu Django AuthenticationForm? Jelaskan juga kelebihan dan kekurangannya.
+
+Django AuthenticationForm adalah form bawaan Django yang dipakai untuk proses login. Lokasinya ada di django.contrib.auth.forms. Proses login ini termasuk Validasi username dan password, Penanganan error otomatis, Integrasi dengan sistem autentikasi Django. AuthenticationForm ini memiliki banyak kelebihan, diantaranya: 
+- Sudah terintegrasi dengan user model Django
+- Validasi otomatis (username exists, password correct)
+- Security features built-in (hashing, sanitization)
+- Customizable (bisa ditambah field/validasi)
+- Error handling yang baik
+
+Selain kelebihan-kelebihan tersebut, AuthenticationForm ini juga memiliki kekurangan yaitu: 
+- Terikat dengan Django (kurang fleksibel untuk sistem external)
+- Defaultnya sederhana (perlu customization untuk fitur kompleks)
+- Limited fields (hanya username/password defaultnya)
+-------------------------------------------------------------------------------------------------------------------------------
+Apa perbedaan antara autentikasi dan otorisasi? Bagaimana Django mengimplementasikan kedua konsep tersebut?
+
+Autentikasi (Authentication): proses memverifikasi identitas user ➝ Contoh: apakah username dan password cocok?. Otorisasi (Authorization): proses menentukan apa yang boleh dilakukan user setelah ia terautentikasi ➝ Contoh: user ini boleh akses dashboard admin atau tidak? 
+
+Untuk implementasi di Django. Autentikasi: ditangani oleh django.contrib.auth {authenticate(), login()}, sedangkan Otorisasi: ditangani dengan sistem permissions dan groups {@login_required, @permission_required}.
+
+Autentikasi bisa dianalogikan sebagai cek identitas, sedangkan otorisasi adalah cek hak akses
+
+-------------------------------------------------------------------------------------------------------------------------------
+Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web?
+
+Cookies
+Kelebihan:
+- Disimpan di client - Tidak bebani server
+- Cepat - Tidak perlu query database
+- Work dengan load balancing - Stateless
+- 
+Kekurangan:
+- Size terbatas (~4KB per cookie)
+- Rentan security risks (XSS, theft)
+- User bisa disable/ubah cookies
+- Hanya bisa simpan string
+
+Session
+kelebihan: 
+- Aman - Data disimpan di server
+- Kapasitas besar - Tidak terbatas seperti cookies
+- Bisa simpan data kompleks (object, list, dll)
+- Auto-expire berdasarkan Waktu
+- 
+Kekurangan:
+- Butuh storage server (database, cache)
+- Performance impact (harus query ke database)
+- Scalability issues (untuk aplikasi distributed)
+-------------------------------------------------------------------------------------------------------------------------------
+Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?
+
+Cookies masih memiliki beberapa celah keamanan. Celah keamanan yang dimiliki cookies, diantaranya: 
+- XSS (Cross-Site Scripting) - Cookie bisa dicuri via JavaScript
+- Session Hijacking - Penyeran mencuri session cookie
+- Man-in-the-Middle - Cookie intercepted di jaringan
+- CSRF (Cross-Site Request Forgery) - Request palsu dengan cookie user
+
+Django menangani celah-celah tersebut dengan beberapa cara, yaitu:
+- Django set cookie sessionid sebagai HttpOnly
+- Bisa diatur SESSION_COOKIE_SAMESITE untuk mencegah CSRF lintas domain
+- Django mendukung SESSION_COOKIE_SECURE = True (hanya terkirim lewat HTTPS)
+- Django punya CSRF protection middleware (csrftoken)
+-------------------------------------------------------------------------------------------------------------------------------
+Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
+
+1. membuat fungsi register di views.py, lalu membuat html baru di templates untuk register ini, tambahkan juga import di urls.py di direktori main dan di urlpatterns agar user dapat mengakses html nya
+2. ulangi Langkah 1 untuk login dan logout
+3. tambahkan otorisasi di views.py main, yaitu import login_required
+4. di showmain dan showproduct tambahkan login_required untuk otorisasi
+
+5. di views.py main tambahkan import baru untuk cookie
+6. ubah kode di fungsi login_user agar menyimpan cookie dengan nama last_login yang isinya timestamp terakhir login
+7. tambahkan variable baru di show_main untuk last_login cookies nya
+8. ubah fungsi logout agar menghapus cookie saat pengguna logout
+9. tambahkan visual sesi terakhir login dengan mengedit main.html di main templates
+
+10. tambahkan import user di models.py main 
+11. tambahkan variable Bernama user untuk menghubungkan user dengan model di class product
+12. penghubungan ini bermanfaat untuk setiap product terasosiasi dengan seorang user
+
+![WhatsApp Image 2025-09-23 at 17 40 19_7327d0cd](https://github.com/user-attachments/assets/7879c5bc-b932-4af8-8536-f06c19468ed0)
+
+![WhatsApp Image 2025-09-23 at 17 40 36_998f71c1](https://github.com/user-attachments/assets/c9dfb5b0-4479-40c2-979c-2503fe8b99f4)
 
 
 
