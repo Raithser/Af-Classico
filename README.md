@@ -124,7 +124,13 @@ csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang
 <img width="1021" height="926" alt="Screenshot 2025-09-17 024755" src="https://github.com/user-attachments/assets/d8187f40-b085-4f8e-9ac4-43bd15af12b2" />
 
 -------------------------------------------------------------------------------------------------------------------------------
-Asdos sudah membantu dan keren
+
+Feedback untuk asisten dosen:
+Sudah sangat membantu
+
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------
 TUGAS 3
 
@@ -212,7 +218,15 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 
 ![WhatsApp Image 2025-09-23 at 17 40 36_998f71c1](https://github.com/user-attachments/assets/c9dfb5b0-4479-40c2-979c-2503fe8b99f4)
 
+-------------------------------------------------------------------------------------------------------------------------------
 
+Feedback untuk asisten dosen:
+Sudah sangat membantu
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 
 
