@@ -79,4 +79,60 @@ Kenapa Django cocok untuk menjadi framework pertama:
 Feedback untuk asisten dosen:
 Sudah sangat membantu
 
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------
+README TUGAS 2
+
+Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+
+Data delivery penting karena akan membuat pengalaman user yang mengunjungi website kita lebih baik. Data delivery yang kurang baik bisa jadi membuat latensi tinggi (10 detik ga respon-respon) yang akan membuat pengalaman user juga turun drastic untuk mengunjungi website kita Kembali
+-------------------------------------------------------------------------------------------------------------------------------
+Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+
+Menurutku JSON lebih baik dari pada XML. Hal ini dikarenakan JSON lebih mudah dibaca dan mirip dengan struktur objek di pemrograman sehari-hari, ini juga lah yang membuat kenapa JSON lebih popular dibanding XML yang lebih sulit dibaca.  
+-------------------------------------------------------------------------------------------------------------------------------
+Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+
+is_valid() memiliki fungsi penting yang tidak bisa kita abaikan begitu saja. is_valid() akan mengecek apakah data yang dimasukkan oleh user masuk sesuai aturan validasi, ini membuat database memiliki data yang konsisten, mengurangi kesalahan input user, memberi keamanan tambahan, dan memberi feedback error
+-------------------------------------------------------------------------------------------------------------------------------
+Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+
+csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang kita akses. Jika kita tidak punya csrf_token, maka bisa ada penyerang yang bisa memanfaatkan hal tersebut dengan cara memanfaatkan session login aktif user saat ini
+-------------------------------------------------------------------------------------------------------------------------------
+ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+
+1. menambahkan template utama yang berfungsi sebagai base template 
+2. menambahkan arah direktori template tersebut ke DIRS di settings.py
+3. menambahkan extends base html untuk setiap html baru yang dibuat
+4. membuat form atau isian data yang nantinya akan diberi ke user
+5. menambah fungsi dan menambah import di views.py
+6. menambahkan url baru di urls.py di main dan mengimport fungsi yang seblumnya dibuat
+7. edit main html untuk membuat tombol pengarah ke form.py yang sebelumnya sudah dibuat   
+8. tambah berkas html sesuai dengan fungsi yang dibuat di views.py sebelumnya
+9. tambah CSRF trusted origins di settings.py
+10. tambahkan import di views.py dan buat fungsi baru untuk menampilkan versi XML atau JSON nya
+11. tambah path baru di urls.py dan import juga
+12. Melakukan add-commit-push ke GitHub
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+<img width="1085" height="945" alt="Screenshot 2025-09-17 024802" src="https://github.com/user-attachments/assets/d50fb195-3713-4d39-99f7-a96a4e6d1bb3" />
+<img width="1120" height="908" alt="Screenshot 2025-09-17 024809" src="https://github.com/user-attachments/assets/b6f50a78-ee42-4115-9526-7b5ddf649cf3" />
+<img width="1064" height="910" alt="Screenshot 2025-09-17 024814" src="https://github.com/user-attachments/assets/efbeecbd-1fd0-48bc-a443-90af63503384" />
+<img width="1021" height="926" alt="Screenshot 2025-09-17 024755" src="https://github.com/user-attachments/assets/d8187f40-b085-4f8e-9ac4-43bd15af12b2" />
+
+-------------------------------------------------------------------------------------------------------------------------------
+Asdos sudah membantu dan keren
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
