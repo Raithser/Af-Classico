@@ -83,7 +83,7 @@ Sudah sangat membantu
 
 
 ---
-#README TUGAS 2#
+## README TUGAS 2
 
 Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
@@ -128,7 +128,7 @@ Feedback untuk asisten dosen:
 Sudah sangat membantu
 
 ---
-##TUGAS 3
+## TUGAS 3
 
 Apa itu Django AuthenticationForm? Jelaskan juga kelebihan dan kekurangannya.
 
