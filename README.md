@@ -159,8 +159,7 @@ Cookies
 Kelebihan:
 - Disimpan di client - Tidak bebani server
 - Cepat - Tidak perlu query database
-- Work dengan load balancing - Stateless
-- 
+- Work dengan load balancing - Stateless 
 Kekurangan:
 - Size terbatas (~4KB per cookie)
 - Rentan security risks (XSS, theft)
@@ -173,7 +172,6 @@ kelebihan:
 - Kapasitas besar - Tidak terbatas seperti cookies
 - Bisa simpan data kompleks (object, list, dll)
 - Auto-expire berdasarkan Waktu
-- 
 Kekurangan:
 - Butuh storage server (database, cache)
 - Performance impact (harus query ke database)
