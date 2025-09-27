@@ -83,7 +83,7 @@ Sudah sangat membantu
 
 
 ---
-##README TUGAS 2
+#README TUGAS 2#
 
 Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
