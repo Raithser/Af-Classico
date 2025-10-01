@@ -219,10 +219,10 @@ Sudah sangat membantu
 ---
 # Tugas 4
 ---
-
 ## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 
 Dalam CSS, urutan prioritas selector ditentukan oleh konsep spesifisitas yang menghitung bobot masing-masing selector. Secara berurutan dari prioritas tertinggi ke terendah adalah: deklarasi !important, inline style yang ditulis langsung pada elemen HTML, selector ID, selector class/attribute/pseudo-class, dan terakhir selector element/pseudo-element. Jika terdapat beberapa selector dengan bobot sama, yang muncul terakhir dalam stylesheet yang akan diterapkan. Memahami urutan prioritas ini sangat penting untuk menghindari konflik style dan memastikan tampilan yang konsisten sesuai desain yang direncanakan.
+
 ---
 ## Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design, serta jelaskan mengapa!
 
