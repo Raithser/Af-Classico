@@ -217,25 +217,28 @@ Feedback untuk asisten dosen:
 Sudah sangat membantu
 
 ---
-##Tugas 4
+## Tugas 4
 
-#Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+# Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 
 Dalam CSS, urutan prioritas selector ditentukan oleh konsep spesifisitas yang menghitung bobot masing-masing selector. Secara berurutan dari prioritas tertinggi ke terendah adalah: deklarasi !important, inline style yang ditulis langsung pada elemen HTML, selector ID, selector class/attribute/pseudo-class, dan terakhir selector element/pseudo-element. Jika terdapat beberapa selector dengan bobot sama, yang muncul terakhir dalam stylesheet yang akan diterapkan. Memahami urutan prioritas ini sangat penting untuk menghindari konflik style dan memastikan tampilan yang konsisten sesuai desain yang direncanakan.
 ---
-#Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design, serta jelaskan mengapa!
+# Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design, serta jelaskan mengapa!
 
 Responsive design menjadi konsep kritis dalam pengembangan web modern karena semakin beragamnya perangkat yang digunakan untuk mengakses internet. Dengan responsive design, sebuah website dapat menyesuaikan layout, ukuran teks, dan gambarnya secara otomatis berdasarkan ukuran layar perangkat pengguna. Contoh aplikasi yang sudah menerapkan responsive design adalah Tokopedia dan Netflix, yang menawarkan pengalaman optimal baik di desktop maupun mobile. Sebaliknya, banyak website pemerintah atau sistem legacy yang belum responsive, menyebabkan pengguna mobile harus melakukan zoom dan scroll horizontal yang mengganggu pengalaman. Responsive design tidak hanya meningkatkan user experience, tetapi juga berpengaruh pada SEO karena search engine seperti Google memberikan prioritas lebih tinggi pada website mobile-friendly.
+
 ---
-#Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+# Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 
 Dalam model kotak (box model) CSS, margin, border, dan padding memiliki fungsi berbeda meskipun semuanya berhubungan dengan ruang di sekitar elemen. Margin adalah jarak di luar elemen, berfungsi memberi ruang antara satu elemen dengan elemen lainnya. Border adalah garis tepi yang mengelilingi elemen, biasanya bisa diatur ketebalan, warna, dan jenis garisnya. Sedangkan padding adalah jarak antara konten elemen dengan border, sehingga memberi ruang di dalam elemen. Misalnya pada sebuah <div>, margin akan mengatur jarak kotak itu dengan elemen lain, border menjadi bingkai kotaknya, dan padding memberi ruang agar teks di dalamnya tidak menempel langsung pada border.
+
 ---
-#Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+# Jelaskan konsep flex box dan grid layout beserta kegunaannya!
 
 Flexbox dan grid adalah dua teknik modern dalam CSS untuk mengatur tata letak. Flexbox berfungsi untuk mengatur elemen dalam satu dimensi, bisa berupa baris horizontal atau kolom vertikal. Dengan flexbox, developer mudah membuat elemen sejajar, memberi jarak otomatis, atau meratakan item ke tengah, sehingga cocok untuk navbar, tombol sejajar, atau layout sederhana. Grid layout lebih canggih karena mendukung tata letak dua dimensi, yakni baris dan kolom sekaligus. Dengan grid, kita bisa membuat layout kompleks seperti galeri foto, dashboard, atau halaman majalah digital. Intinya, flexbox lebih cocok untuk kontrol satu arah, sedangkan grid lebih cocok untuk struktur dua arah yang lebih kompleks.
+
 ---
-#Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
+# Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
 
 1. tambahkan tag viewport agar web dapat menyesuaikan ukuran untuk platform berbeda, tambahkan juga script tailwind di base.html nya
 2. tambahkan fungsi edit product di views.py main, buat berkas html nya di main/templates, tambah juga import di urls.py main dan pathnya di urlpattern
@@ -247,7 +250,8 @@ Flexbox dan grid adalah dua teknik modern dalam CSS untuk mengatur tata letak. F
 8. hubungkan file css tersebut ke base.html
 9. Styling navbar, css global tadi, login , dan regist html
 10. buat html baru untuk styling productnya di main/templates
-11. styling product detail, create product, dan edit product 
+11. styling product detail, create product, dan edit product
+
 ---
 #Feedback untuk asisten dosen:
 Sudah sangat membantu
