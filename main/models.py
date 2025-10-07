@@ -5,12 +5,13 @@ from django.contrib.auth.models import User
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     CATEGORY_CHOICES = [
-        ('retro', 'Retro'),
-        ('update', 'Update'),
-        ('exclusive', 'Exclusive'),
-        ('match', 'Match'),
-        ('rumor', 'Rumor'),
-        ('analysis', 'Analysis'),
+    ('jersey', '⚽ Jersey'),
+    ('boots', '👟 Football Boots'),
+    ('ball', '🥅 Match Ball'),
+    ('training', '🏋️ Training Gear'),
+    ('accessories', '🎯 Football Accessories'),
+    ('collectibles', '🏆 Collectibles'),
+    ('equipment', '⚙️ Equipments'),
     ]
     title = models.CharField(max_length=100)
     price = models.IntegerField()
