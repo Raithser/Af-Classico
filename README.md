@@ -231,7 +231,7 @@ Responsive design menjadi konsep kritis dalam pengembangan web modern karena sem
 ---
 ## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 
-Dalam model kotak (box model) CSS, margin, border, dan padding memiliki fungsi berbeda meskipun semuanya berhubungan dengan ruang di sekitar elemen. Margin adalah jarak di luar elemen, berfungsi memberi ruang antara satu elemen dengan elemen lainnya. Border adalah garis tepi yang mengelilingi elemen, biasanya bisa diatur ketebalan, warna, dan jenis garisnya. Sedangkan padding adalah jarak antara konten elemen dengan border, sehingga memberi ruang di dalam elemen. Misalnya pada sebuah <div>, margin akan mengatur jarak kotak itu dengan elemen lain, border menjadi bingkai kotaknya, dan padding memberi ruang agar teks di dalamnya tidak menempel langsung pada border.
+Dalam model kotak (box model) CSS, margin, border, dan padding memiliki fungsi berbeda meskipun semuanya berhubungan dengan ruang di sekitar elemen. Margin adalah jarak di luar elemen, berfungsi memberi ruang antara satu elemen dengan elemen lainnya. Border adalah garis tepi yang mengelilingi elemen, biasanya bisa diatur ketebalan, warna, dan jenis garisnya. Sedangkan padding adalah jarak antara konten elemen dengan border, sehingga memberi ruang di dalam elemen. Misalnya pada sebuah "<div>", margin akan mengatur jarak kotak itu dengan elemen lain, border menjadi bingkai kotaknya, dan padding memberi ruang agar teks di dalamnya tidak menempel langsung pada border.
 
 ---
 ## Jelaskan konsep flex box dan grid layout beserta kegunaannya!
