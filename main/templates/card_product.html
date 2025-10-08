@@ -46,6 +46,11 @@
       </a>
     </h3>
 
+    <!-- TAMBAH HARGA DI SINI -->
+    <div class="mb-3">
+      <span class="text-xl font-bold text-amber-600">Rp {{ product.price|floatformat:0 }}</span>
+    </div>
+
     <p class="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
       {{ product.description|truncatewords:20 }}
     </p>
