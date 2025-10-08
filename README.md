@@ -303,11 +303,33 @@ Namun, jika tidak diimplementasikan dengan baik, AJAX juga bisa menimbulkan kebi
 ---
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
 
-1. 
-
-
-
-
+1. buat toast.html di folder root templates
+2. buat javascriptnya untuk toast tersebut di folder baru static/js
+3. include toast.html ke base.html di template
+4. di views.py tambahkan import jsonrespons
+5. edit fungsi show_json di views.py
+6. edit main.html untuk ajax
+7. tambahin script di main.html juga untuk js
+8. edit fungsi show json by id di views.py
+9. edit product.detail.html untuk ajax
+10. buat modal html di root templates dengan js nya
+11. menambahkan button untuk membuka modalnya di main.html
+12. tambahkan model di base.html juga
+13. tambahkan import di views.py untuk menangani request ajax
+14. tambahkan fungsi addnews by ajax dan csrfexempt juga requirepostnya 
+15. tambahin url pattern nya dan importnya di urls.py
+16. edit lagi modal html untuk add news ini
+17. tambahin event listener di main.html dan modal.html biar ga ada reload
+18. tambahin import strip_tags di views.py dan forms.py
+19. edit fungsi add news di views.py
+20. tambahin fungsi baru di forms.py
+21. tambahkan dompurify untuk membersihkan data berbahaya yang sudah terlanjur masuk
+22. terapkan sanitasi di base.html, main.html (fungsi buildproduct) 
+23. tambahkan event listener di main.html (perbaiki)
+24. tambhakn tombol refersh manual di main.html dan js nya
+25. tambahkan modal delete di modal.html dan js nya
+26. perbaiki build productcard element agar ada peringatan delete
+    
 ---
 ## Feedback untuk asisten dosen:
 Sudah sangat membantu
