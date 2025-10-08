@@ -231,7 +231,7 @@ Responsive design menjadi konsep kritis dalam pengembangan web modern karena sem
 ---
 ## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 
-Dalam model kotak (box model) CSS, margin, border, dan padding memiliki fungsi berbeda meskipun semuanya berhubungan dengan ruang di sekitar elemen. Margin adalah jarak di luar elemen, berfungsi memberi ruang antara satu elemen dengan elemen lainnya. Border adalah garis tepi yang mengelilingi elemen, biasanya bisa diatur ketebalan, warna, dan jenis garisnya. Sedangkan padding adalah jarak antara konten elemen dengan border, sehingga memberi ruang di dalam elemen. Misalnya pada sebuah <div>, margin akan mengatur jarak kotak itu dengan elemen lain, border menjadi bingkai kotaknya, dan padding memberi ruang agar teks di dalamnya tidak menempel langsung pada border.
+Dalam model kotak (box model) CSS, margin, border, dan padding memiliki fungsi berbeda meskipun semuanya berhubungan dengan ruang di sekitar elemen. Margin adalah jarak di luar elemen, berfungsi memberi ruang antara satu elemen dengan elemen lainnya. Border adalah garis tepi yang mengelilingi elemen, biasanya bisa diatur ketebalan, warna, dan jenis garisnya. Sedangkan padding adalah jarak antara konten elemen dengan border, sehingga memberi ruang di dalam elemen. Misalnya pada sebuah "div", margin akan mengatur jarak kotak itu dengan elemen lain, border menjadi bingkai kotaknya, dan padding memberi ruang agar teks di dalamnya tidak menempel langsung pada border.
 
 ---
 ## Jelaskan konsep flex box dan grid layout beserta kegunaannya!
@@ -256,6 +256,66 @@ Flexbox dan grid adalah dua teknik modern dalam CSS untuk mengatur tata letak. F
 ---
 ## Feedback untuk asisten dosen:
 Sudah sangat membantu
+
+---
+# Tugas 5
+---
+## Apa perbedaan antara synchronous request dan asynchronous request?
+
+Synchronous request adalah permintaan ke server di mana program harus menunggu respon sebelum melanjutkan ke proses berikutnya. Proses ini berjalan berurutan sehingga mudah dipahami, tetapi dapat membuat aplikasi terasa lambat atau tidak responsif.
+
+Sebaliknya, asynchronous request memungkinkan program mengirim permintaan tanpa menunggu hasilnya. Program dapat melanjutkan proses lain sambil menunggu respon dari server. Cara ini membuat aplikasi lebih cepat dan responsif, namun alur eksekusinya sedikit lebih kompleks.
+
+---
+## Bagaimana AJAX bekerja di Django (alur request–response)?
+
+AJAX (Asynchronous JavaScript and XML) di Django berfungsi dengan mengirim dan menerima data dari server tanpa harus memuat ulang seluruh halaman web. Proses dimulai saat pengguna melakukan interaksi pada halaman, seperti mengklik tombol atau mengisi form. JavaScript akan menangkap aksi tersebut dan mengirimkan permintaan AJAX ke URL Django yang mengarah ke sebuah view khusus.
+
+Selanjutnya, view di Django akan memproses permintaan tersebut, misalnya dengan mengambil data dari database atau mengolah input pengguna, lalu memberikan respons dalam format JSON. Respons ini kemudian diterima oleh JavaScript di sisi klien, yang kemudian memperbarui bagian tertentu dari halaman web secara dinamis tanpa melakukan refresh halaman penuh.
+
+Dengan ringkas, mekanisme AJAX di Django berjalan melalui tahapan: event di frontend → permintaan AJAX dikirim ke view Django → Django memproses dan mengembalikan data dalam format JSON → JavaScript memperbarui tampilan halaman secara langsung berdasarkan data tersebut.
+
+---
+## Apa keuntungan menggunakan AJAX dibandingkan render biasa di Django?
+
+Keuntungan utama menggunakan AJAX dibandingkan render biasa di Django adalah kemampuannya untuk memperbarui hanya bagian tertentu dari halaman tanpa harus memuat ulang seluruh halaman. AJAX melakukan komunikasi secara asinkron antara browser dan server, sehingga pengguna tetap dapat berinteraksi dengan halaman saat data sedang diproses di latar belakang.
+
+Selain itu, AJAX membuat aplikasi web terasa lebih cepat dan responsif karena hanya data yang diperlukan yang dikirim dan diterima, bukan seluruh halaman HTML. Hal ini juga mengurangi penggunaan bandwidth dan mempercepat waktu loading, terutama pada aplikasi yang sering menampilkan data dinamis seperti komentar, notifikasi, atau daftar produk.
+
+Sementara itu, render biasa di Django mengharuskan server memproses dan mengirim ulang seluruh halaman HTML setiap kali ada permintaan baru, seperti saat submit form atau pindah halaman, sehingga waktu muat menjadi lebih lama dan pengalaman pengguna kurang interaktif.
+
+---
+## Bagaimana cara memastikan keamanan saat menggunakan AJAX untuk fitur Login dan Register di Django?
+
+Untuk memastikan keamanan saat menggunakan AJAX pada fitur login dan register di Django, ada beberapa hal penting yang harus diterapkan. Pertama, setiap permintaan POST harus menyertakan CSRF token, agar Django dapat memverifikasi bahwa permintaan tersebut berasal dari situs yang sah dan bukan dari pihak luar yang mencoba melakukan serangan Cross-Site Request Forgery. Kedua, lakukan validasi data di sisi server, bukan hanya di frontend, karena validasi di browser bisa dengan mudah dimanipulasi. Django sudah menyediakan form validation bawaan yang aman untuk memeriksa format dan keabsahan input seperti username atau password.
+
+Selain itu, pastikan komunikasi antara klien dan server dilakukan melalui HTTPS agar data sensitif seperti password tidak bisa disadap selama transmisi. Kemudian, batasi data yang dikirim dalam response AJAX, cukup kirim status seperti “success” atau “error” tanpa menyertakan informasi sensitif pengguna. Gunakan juga sistem autentikasi bawaan Django seperti authenticate() dan login() agar pengelolaan session tetap aman dan terintegrasi. Terakhir, hindari pengaturan CORS_ALLOW_ALL_ORIGINS = True agar API tidak bisa diakses sembarangan, dan pertimbangkan untuk menambahkan rate limiting guna mencegah brute force login melalui AJAX. Dengan langkah-langkah ini, fitur login dan register berbasis AJAX akan tetap cepat sekaligus aman.
+
+---
+## Bagaimana AJAX mempengaruhi pengalaman pengguna (User Experience) pada website?
+
+AJAX sangat berpengaruh positif terhadap pengalaman pengguna (User Experience/UX) di sebuah website karena memungkinkan halaman web berinteraksi dengan server tanpa perlu dimuat ulang secara keseluruhan. Dengan AJAX, data dapat diperbarui secara dinamis di bagian tertentu dari halaman, sehingga pengguna merasakan proses yang lebih cepat, halus, dan interaktif.
+
+Contohnya, saat pengguna menekan tombol “Like”, “Kirim Komentar”, atau memfilter produk, hasilnya bisa langsung muncul tanpa halaman berpindah. Hal ini membuat website terasa lebih responsif dan efisien, mirip seperti aplikasi desktop. Selain itu, pengguna tidak kehilangan konteks atau posisi scroll-nya, karena hanya elemen tertentu yang diperbarui.
+
+Namun, jika tidak diimplementasikan dengan baik, AJAX juga bisa menimbulkan kebingungan — misalnya ketika tidak ada indikator loading atau error message yang jelas, pengguna bisa mengira tidak ada respon. Oleh karena itu, penggunaan AJAX yang ideal adalah ketika sistem tetap memberikan umpan balik visual yang cepat, jelas, dan tidak mengganggu alur interaksi pengguna.
+
+---
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
+
+1. 
+
+
+
+
+---
+## Feedback untuk asisten dosen:
+Sudah sangat membantu
+
+---
+
+
+
 
 
 
