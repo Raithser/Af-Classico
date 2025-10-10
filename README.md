@@ -1,4 +1,4 @@
-Af Classico
+# AF Classico
 
 Halo orang-orang berkelas
 ini adalah repo untuk project Af Classico, sebuah aplikasi web sederhana berkelas bertemakan football shop dengan basis Django
@@ -8,7 +8,7 @@ Dibuat oleh M. Adella Fathir Supriadi (2406495640) dari kelas PBP D Fasilkom UI
 
 ---
 
-Cara pengimplentasian checklist:
+## Cara pengimplentasian checklist:
 1. Inisialisasi Proyek Django
 - Buka direktori utama
 - Open terminal dan aktifkan virtual environment
@@ -48,13 +48,13 @@ class Product(models.Model):
 
 ---
 
-Peran settings.py dalam proyek Django
+## Peran settings.py dalam proyek Django
 
 Dalam proyek Django, file settings.py adalah pusat pengaturan yang mengatur cara aplikasi berjalan. Semua hal penting ditulis di sini, mulai dari database yang dipakai, daftar aplikasi yang aktif, hingga tempat menyimpan file seperti gambar, CSS, atau JavaScript. Di dalamnya juga ada SECRET_KEY untuk keamanan, DEBUG untuk menentukan mode pengembangan atau produksi, serta ALLOWED_HOSTS yang mengatur siapa saja yang boleh mengakses aplikasi. Selain itu, settings.py juga mengatur middleware (lapisan yang memproses request dan response), template HTML, bahasa, zona waktu, sampai aturan keamanan password. Singkatnya, settings.py bisa dibilang adalah “otak” proyek Django, karena hampir semua pengaturan utama proyek ada di dalam file ini.
 
 ---
 
-Cara kerja migrasi database di Django:
+## Cara kerja migrasi database di Django:
 1. Buat atau lakukan edit pada models.py di direktori proyek
 2. Jalankan:
 	python manage.py makemigrations (Django membuat file migrasi)
@@ -64,7 +64,7 @@ Migrasi akan membuat database tetap sinkron dengan kode yang ada
 
 ---
 
-Kenapa Django cocok untuk menjadi framework pertama:
+## Kenapa Django cocok untuk menjadi framework pertama:
 - Django memiliki banyak fitur siap pakai 
 - Django memiliki pola struktur yang jelas (MVT)
 - Dokumentasi Django salah satu yang terbaik di open source
@@ -76,32 +76,33 @@ Kenapa Django cocok untuk menjadi framework pertama:
   
 ---
 
-Feedback untuk asisten dosen:
+## Feedback untuk asisten dosen:
 Sudah sangat membantu
 
-
-
-
 ---
-## README TUGAS 2
+# README TUGAS 2
 
-Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+## Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
 Data delivery penting karena akan membuat pengalaman user yang mengunjungi website kita lebih baik. Data delivery yang kurang baik bisa jadi membuat latensi tinggi (10 detik ga respon-respon) yang akan membuat pengalaman user juga turun drastic untuk mengunjungi website kita Kembali
+
 ---
-Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+## Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
 
 Menurutku JSON lebih baik dari pada XML. Hal ini dikarenakan JSON lebih mudah dibaca dan mirip dengan struktur objek di pemrograman sehari-hari, ini juga lah yang membuat kenapa JSON lebih popular dibanding XML yang lebih sulit dibaca.  
+
 ---
-Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+## Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
 
 is_valid() memiliki fungsi penting yang tidak bisa kita abaikan begitu saja. is_valid() akan mengecek apakah data yang dimasukkan oleh user masuk sesuai aturan validasi, ini membuat database memiliki data yang konsisten, mengurangi kesalahan input user, memberi keamanan tambahan, dan memberi feedback error
+
 ---
-Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+## Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
 
 csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang kita akses. Jika kita tidak punya csrf_token, maka bisa ada penyerang yang bisa memanfaatkan hal tersebut dengan cara memanfaatkan session login aktif user saat ini
+
 ---
- Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
 
 1. menambahkan template utama yang berfungsi sebagai base template 
 2. menambahkan arah direktori template tersebut ke DIRS di settings.py
@@ -115,22 +116,22 @@ csrf_token penting karena ini akan mengamankan sesi login ke browser yang sedang
 10. tambahkan import di views.py dan buat fungsi baru untuk menampilkan versi XML atau JSON nya
 11. tambah path baru di urls.py dan import juga
 12. Melakukan add-commit-push ke GitHub
+
 ---
-
-
 <img width="1085" height="945" alt="Screenshot 2025-09-17 024802" src="https://github.com/user-attachments/assets/d50fb195-3713-4d39-99f7-a96a4e6d1bb3" />
 <img width="1120" height="908" alt="Screenshot 2025-09-17 024809" src="https://github.com/user-attachments/assets/b6f50a78-ee42-4115-9526-7b5ddf649cf3" />
 <img width="1064" height="910" alt="Screenshot 2025-09-17 024814" src="https://github.com/user-attachments/assets/efbeecbd-1fd0-48bc-a443-90af63503384" />
 <img width="1021" height="926" alt="Screenshot 2025-09-17 024755" src="https://github.com/user-attachments/assets/d8187f40-b085-4f8e-9ac4-43bd15af12b2" />
 
 ---
-Feedback untuk asisten dosen:
+
+## Feedback untuk asisten dosen:
 Sudah sangat membantu
 
 ---
-## TUGAS 3
+# TUGAS 3
 
-Apa itu Django AuthenticationForm? Jelaskan juga kelebihan dan kekurangannya.
+## Apa itu Django AuthenticationForm? Jelaskan juga kelebihan dan kekurangannya.
 
 Django AuthenticationForm adalah form bawaan Django yang dipakai untuk proses login. Lokasinya ada di django.contrib.auth.forms. Proses login ini termasuk Validasi username dan password, Penanganan error otomatis, Integrasi dengan sistem autentikasi Django. AuthenticationForm ini memiliki banyak kelebihan, diantaranya: 
 - Sudah terintegrasi dengan user model Django
@@ -144,7 +145,7 @@ Selain kelebihan-kelebihan tersebut, AuthenticationForm ini juga memiliki kekura
 - Defaultnya sederhana (perlu customization untuk fitur kompleks)
 - Limited fields (hanya username/password defaultnya)
 ---
-Apa perbedaan antara autentikasi dan otorisasi? Bagaimana Django mengimplementasikan kedua konsep tersebut?
+## Apa perbedaan antara autentikasi dan otorisasi? Bagaimana Django mengimplementasikan kedua konsep tersebut?
 
 Autentikasi (Authentication): proses memverifikasi identitas user ➝ Contoh: apakah username dan password cocok?. Otorisasi (Authorization): proses menentukan apa yang boleh dilakukan user setelah ia terautentikasi ➝ Contoh: user ini boleh akses dashboard admin atau tidak? 
 
@@ -153,7 +154,7 @@ Untuk implementasi di Django. Autentikasi: ditangani oleh django.contrib.auth {a
 Autentikasi bisa dianalogikan sebagai cek identitas, sedangkan otorisasi adalah cek hak akses
 
 ---
-Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web?
+## Apa saja kelebihan dan kekurangan session dan cookies dalam konteks menyimpan state di aplikasi web?
 
 Cookies
 Kelebihan:
@@ -177,7 +178,7 @@ Kekurangan:
 - Performance impact (harus query ke database)
 - Scalability issues (untuk aplikasi distributed)
 ---
-Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?
+## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai? Bagaimana Django menangani hal tersebut?
 
 Cookies masih memiliki beberapa celah keamanan. Celah keamanan yang dimiliki cookies, diantaranya: 
 - XSS (Cross-Site Scripting) - Cookie bisa dicuri via JavaScript
@@ -191,7 +192,7 @@ Django menangani celah-celah tersebut dengan beberapa cara, yaitu:
 - Django mendukung SESSION_COOKIE_SECURE = True (hanya terkirim lewat HTTPS)
 - Django punya CSRF protection middleware (csrftoken)
 ---
-Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
 
 1. membuat fungsi register di views.py, lalu membuat html baru di templates untuk register ini, tambahkan juga import di urls.py di direktori main dan di urlpatterns agar user dapat mengakses html nya
 2. ulangi Langkah 1 untuk login dan logout
@@ -213,7 +214,7 @@ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-b
 ![WhatsApp Image 2025-09-23 at 17 40 36_998f71c1](https://github.com/user-attachments/assets/c9dfb5b0-4479-40c2-979c-2503fe8b99f4)
 
 ---
-Feedback untuk asisten dosen:
+## Feedback untuk asisten dosen:
 Sudah sangat membantu
 
 ---
