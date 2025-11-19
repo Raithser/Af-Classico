@@ -13,7 +13,8 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
-
+import requests
+import json
 
 
 @login_required(login_url='/login')
@@ -75,13 +76,12 @@ def show_json(request):
             'price': product.price,
             'thumbnail': product.thumbnail,
             'product_views': product.product_views,
-            'created_at': product.created_at.isoformat() if product.created_at else None,
+            'created_at': (product.created_at or datetime.datetime.now()).isoformat(),
             'is_featured': product.is_featured,
             'user_id': product.user.id if product.user else None, 
         }
         for product in product_list
     ]
-
     return JsonResponse(data, safe=False)
 
 def show_xml_by_id(request, product_id):
@@ -187,3 +187,148 @@ def add_product_entry_ajax(request):
     new_product.save()
 
     return HttpResponse(b"CREATED", status=201)
+
+def proxy_image(request):
+    image_url = request.GET.get('url')
+    if not image_url:
+        return HttpResponse('No URL provided', status=400)
+    
+    try:
+        # Fetch image from external source
+        response = requests.get(image_url, timeout=10)
+        response.raise_for_status()
+        
+        # Return the image with proper content type
+        return HttpResponse(
+            response.content,
+            content_type=response.headers.get('Content-Type', 'image/jpeg')
+        )
+    except requests.RequestException as e:
+        return HttpResponse(f'Error fetching image: {str(e)}', status=500)
+    
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        try:
+            # Debug: Print raw request data
+            print("Raw body:", request.body)
+            print("Content type:", request.content_type)
+            
+            # Handle both form data and JSON data
+            if request.content_type == 'application/json':
+                data = json.loads(request.body)
+            else:
+                # Jika data dikirim sebagai form data
+                data = request.POST.dict()
+                # Jika empty, coba parse dari body
+                if not data and request.body:
+                    try:
+                        data = json.loads(request.body)
+                    except:
+                        data = {}
+            
+            print("Parsed data:", data)
+            
+            title = strip_tags(data.get("title", ""))
+            description = strip_tags(data.get("description", ""))
+            category = data.get("category", "")
+            thumbnail = data.get("thumbnail", "")
+            
+            # Handle boolean conversion
+            is_featured = data.get("is_featured", False)
+            if isinstance(is_featured, str):
+                is_featured = is_featured.lower() == 'true'
+            
+            # Handle price conversion
+            price = data.get("price", 0)
+            if isinstance(price, str):
+                try:
+                    price = int(price)
+                except ValueError:
+                    price = 0
+            
+            # Validasi data required
+            if not title or not description:
+                return JsonResponse({
+                    "status": "error", 
+                    "message": "Title and description are required"
+                }, status=400)
+            
+            # Pastikan user sudah login
+            if not request.user.is_authenticated:
+                return JsonResponse({
+                    "status": "error", 
+                    "message": "User not authenticated"
+                }, status=401)
+            
+            # Create product
+            new_product = Product(
+                title=title, 
+                description=description,
+                category=category,
+                thumbnail=thumbnail,
+                is_featured=is_featured,
+                price=price,
+                user=request.user
+            )
+            new_product.save()
+            
+            print(f"✅ Product saved: {new_product.title} by user: {new_product.user} (ID: {new_product.user.id})")
+            
+            # Cek langsung dari database
+            from django.db import connection
+            print(f"📊 Total products in DB: {Product.objects.count()}")
+            print(f"📊 Products by this user: {Product.objects.filter(user=request.user).count()}")
+            
+            return JsonResponse({
+                "status": "success", 
+                "message": "Product created successfully",
+                "product_id": str(new_product.id),
+                "user_id": request.user.id,
+                "username": request.user.username
+            }, status=201)
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            return JsonResponse({"status": "error", "message": str(e)}, status=500)
+    
+@login_required
+def product_json(request):
+    products = Product.objects.filter(user=request.user)
+    data = serializers.serialize("json", products)
+    return HttpResponse(data, content_type="application/json")   
+
+@login_required(login_url='/login')
+def show_json_user(request):
+    try:
+        print(f"=== SHOW JSON USER - User: {request.user} ===")
+        
+        # HANYA ambil produk milik user yang login
+        product_list = Product.objects.filter(user=request.user)
+        
+        print(f"Found {product_list.count()} products for user {request.user}")
+        
+        data = [
+            {
+                'id': str(product.id),
+                'title': product.title,
+                'description': product.description,
+                'category': product.category,
+                'price': product.price,
+                'thumbnail': product.thumbnail,
+                'product_views': product.product_views,
+                'created_at': product.created_at.isoformat() if product.created_at else None,
+                'is_featured': product.is_featured,
+                'user_id': product.user.id,
+                'user_username': product.user.username,
+            }
+            for product in product_list
+        ]
+        
+        print(f"Returning {len(data)} products as JSON")
+        return JsonResponse(data, safe=False)
+        
+    except Exception as e:
+        print(f"Error in show_json_user: {e}")
+        return JsonResponse({'error': str(e)}, status=500)
